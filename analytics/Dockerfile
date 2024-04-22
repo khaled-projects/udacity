@@ -5,7 +5,7 @@ ENV DB_USERNAME=myuser
 ENV DB_PASSWORD=${POSTGRES_PASSWORD}
 ENV DB_HOST=127.0.0.1
 ENV DB_PORT=5432
-ENV  DB_NAME=mydatabase
+ENV DB_NAME=mydatabase
 
 # Update package lists and install required packages
 RUN apt-get update -y && \
