@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: coworking
-        image: 408509770453.dkr.ecr.us-east-1.amazonaws.com/udacity:latest
+        image:<> ,..,.,.,<><><><>><><><><><>>
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
