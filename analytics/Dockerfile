@@ -16,7 +16,7 @@ RUN apt-get update -y && \
 RUN pip install --upgrade pip setuptools wheel
 
 # Set the working directory in the container
-WORKDIR /analytics
+WORKDIR /udacity/analytics
 
 # Copy the application code to the container
 COPY . .
