@@ -4,16 +4,10 @@ Coworking Space Analytics API Deployment Guide
 Welcome to the deployment guide for the Coworking Space Analytics API! This guide is designed to streamline the deployment process of the analytics API on Kubernetes.
 
 Getting Started
-Dependencies
-
+Dependencies:
 Ensure that you have the following tools installed:
 
-Python (3.6+)
-Docker
-kubectl
-AWS CLI
-helm
-GitHub
+Python (3.6+),Docker,kubectl,AWS CLI,helm,GitHub
 Setup
 1. Create an EKS Cluster
 
