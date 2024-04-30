@@ -7,10 +7,10 @@ spec:
   selector:
     service: coworking
   ports:
-  - name: "5432"
+  - name: "5153"
     protocol: TCP
-    port: 80
-    targetPort: 5432
+    port: 5153
+    targetPort: 5153
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -34,14 +34,14 @@ spec:
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
-            path: "/api"
-            port: 80
+            path: "/health_check"
+            port: 5153
           initialDelaySeconds: 5
           timeoutSeconds: 2
         readinessProbe:
           httpGet:
-            path: "/api"
-            port: 80
+            path: "/readiness_check"
+            port: 5153
           initialDelaySeconds: 5
           timeoutSeconds: 5
         envFrom:
