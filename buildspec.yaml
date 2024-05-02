@@ -1,4 +1,3 @@
-
 version: 0.2
 
 phases:
@@ -11,11 +10,11 @@ phases:
     commands:
       - echo Starting build at `date`
       - echo Building the Docker image...
-      - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG .  # Use $IMAGE_TAG as the tag
-      - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG  # Tagging the image
+      - docker build -t $IMAGE_REPO_NAME:$CODEBUILD_BUILD_NUMBER .  # Use $CODEBUILD_BUILD_NUMBER as the tag
+      - docker tag $IMAGE_REPO_NAME:$CODEBUILD_BUILD_NUMBER $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$CODEBUILD_BUILD_NUMBER  # Tagging the image
 
   post_build:
     commands:
       - echo Completed build at `date` 
       - echo Pushing the Docker image... 
-      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG  # Pushing the image with CodeBuild number as the tag
+      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$CODEBUILD_BUILD_NUMBER  # Replace image tag with CodeBuild number
