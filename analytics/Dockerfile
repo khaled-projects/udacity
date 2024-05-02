@@ -1,5 +1,5 @@
 # Use a slim version of Python as the base image
-FROM python:3.10-slim
+FROM python:3.9-slim
 # Set environment variables
 ENV DB_USERNAME=myuser
 ENV DB_PASSWORD=${POSTGRES_PASSWORD}
