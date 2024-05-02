@@ -16,6 +16,6 @@ phases:
 
   post_build:
     commands:
-      - echo Completed build at `date`
-      - echo Pushing the Docker image...
+      - echo Completed build at `date` ##################HKHAKJHKJHKJ
+      - echo Pushing the Docker image... ######Jhkjhkjhklhkjhkjh
       - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$CODEBUILD_BUILD_NUMBER  # Pushing the image with CodeBuild number as the tag
