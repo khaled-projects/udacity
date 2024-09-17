@@ -46,6 +46,7 @@ Set necessary environment variables and run the application:
  export DB_PORT=5433
  export DB_NAME=mydatabase
  python app.py
+ 
 4. Verify the Application
 
 Generate reports for check-ins grouped by dates and user visits:
