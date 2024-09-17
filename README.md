@@ -20,6 +20,7 @@ Setup
 Utilize eksctl to create an EKS cluster tailored to your application's requirements. After creating the cluster, update the Kubeconfig to enable seamless interaction.
   eksctl create cluster --name my-cluster --region us-east-1 --nodegroup-name my-nodes --node-type t3.small --nodes 1 --nodes-min 1 --nodes-max 2
   aws eks --region us-east-1 update-kubeconfig --name my-cluster
+  
 2. Configure a Database for the Service
 
 Apply YAML configurations to set up the Postgres database, ensuring proper configuration of PVC, PV, ConfigMap, and the Postgres deployment.
@@ -28,6 +29,7 @@ Apply YAML configurations to set up the Postgres database, ensuring proper confi
   kubectl apply -f pv.yaml 
   kubectl apply -f configmap.yaml
   kubectl apply -f postgresql-deployment.yaml
+  
 3. Build the Analytics Application Locally
 
 Install dependencies and run the application locally to ensure functionality.
@@ -50,6 +52,7 @@ Generate reports for check-ins grouped by dates and user visits:
 
  curl <BASE_URL>/api/reports/daily_usage
  curl <BASE_URL>/api/reports/user_visits
+ 
 5. Deploy the Analytics Application
 
 Proceed with the deployment process, consisting of Dockerizing the application, setting up Continuous Integration with CodeBuild, and deploying the application on Kubernetes.
@@ -69,6 +72,7 @@ Deploy the application using the provided Kubernetes configuration file:
 
  
  kubectl apply -f coworking.yaml
+ 
 9. Setup CloudWatch Logging
 
 Run the following commands to set up CloudWatch logging:
